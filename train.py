@@ -14,6 +14,7 @@ def train_one_epoch(model, criterion, optimizer, data_loader, device):
     avgloss = AverageMeter('Loss', '1.5f')
     jacc1 = AverageMeter('Jacc_sim@1', ':6.2f')
     train_loss = 0.0
+    model.train()
     for data in tqdm(data_loader):
         
         model.to(device) 
